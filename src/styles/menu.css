@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Liter&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Liter", serif;
+    background-color: #1E1E1E;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: #161616;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sidebar-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-content img {
+    width: 150px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar ul li {
+    background-color: #161616;
+    text-align: center;
+    cursor: pointer;
+    padding: 25px;
+    font-size: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #1E1E1E;
+}
+
+/* Conteúdo principal */
+.main-container {
+    width: 80%;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 250px;
+    background-image: url('../assets/images/headerMenu.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+/* Botão cancelar */
+header .header-content {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #161616;
+}
+
+/* Main */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    color: white;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+/* Container de Cards */
+.container {
+    padding-bottom: 20px;
+}
+
+.row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px;
+}
+
+.col-md-6, .col-lg-3 {
+    padding: 8px;
+    display: flex;
+}
+
+/* Estilos para o card */
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #161616;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o conteúdo uniformemente */
+    padding: 15px;
+}
+
+.card-body h5, .card-body p {
+    margin: 0;
+}
+
+/* Botão modal*/
+.open-modal-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.open-modal-btn:hover {
+    background: none;
+    border: none;
+}
+
+/* Estilos para o modal */
+.modal-content {
+    background-color: #1E1E1E;
+    color: white;
+
+}
+
+.modal-header, .modal-footer {
+    border-color: #333;
+}
+
+.modal-title {
+    color: white;
+}
+.modal-body {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+.modal-body img {
+    max-width: 200px;
+    max-height: 190px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    padding-right: 10px;
+}
+.modal-content {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+.modal-preco {
+    position: absolute;
+    bottom: -20px;
+    right: 0px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+
+}
+
+.modal-descricao {
+    padding: 0 0 20px 0;
+}
+.btn-close {
+    filter: invert(1);
+}
+
