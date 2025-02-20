@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Liter&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Liter", serif;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.btnOpcoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.btnOpcoes button {
+    color: #fff;
+    background-color: rgb(255, 25, 25);
+    border-radius: 8px;
+    padding: 30px;
+    font-weight: 900;
+    font-size: 32px;
+    height: 200px;
+    width: 800px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnOpcoes button i {
+    font-size: 50px;
+    padding-right: 15px;
+}
+
+.btnOpcoes button:hover {
+    background-color: rgb(200, 0, 0);
+}
+
+.btnOpcoes #cancel {
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+    border: none;
+}
+
+/* Estilos para telas em modo portrait (1080x1920) */
+@media (max-width: 1080px) and (orientation: portrait) {
+    .btnOpcoes button {
+        width: 90vw;
+        height: 150px;
+        font-size: 28px;
+    }
+
+    .btnOpcoes {
+        gap: 30px;
+    }
+    .btnOpcoes #cancel {
+        margin-top:500px;
+    }
+}
+
+/* Estilos para telas em modo landscape (1920x1080) */
+@media (min-width: 1081px) and (orientation: landscape) {
+    .btnOpcoes button {
+        width: 800px; /* Mantém a largura fixa */
+        height: 200px; /* Mantém a altura fixa */
+        font-size: 32px; /* Mantém o tamanho da fonte */
+    }
+
+}

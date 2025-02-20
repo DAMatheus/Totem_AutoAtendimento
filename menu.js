@@ -1,5 +1,7 @@
-// Menu Promoção
+let carrinho = [];
+let itemAtual = null;
 
+// Menu Promoção
 async function carregarMenuPromo() {
     try {
         const response = await fetch("http://localhost:3000/promo");
@@ -36,7 +38,7 @@ async function carregarMenuPromo() {
                 const nome = this.getAttribute("data-nome");
                 const descricao = this.getAttribute("data-descricao");
                 const preco = this.getAttribute("data-preco");
-
+                itemAtual = {nome, descricao, preco}
                 document.querySelector(".modal-body").innerHTML = `
                     <img src="src/assets/images/hambugerSalada.png" alt="${nome}">
                     <div class="modal-content">
@@ -216,9 +218,30 @@ async function carregarMenuSobremesa() {
     }
 }
 
+
+// Carrinho
+
+document.getElementById(`addcarrinho`).addEventListener(`click`, function() {
+    if (itemAtual) {
+        carrinho.push(itemAtual)
+        atualizarCarrinho()
+    }
+})
+
+function atualizarCarrinho() {
+    const footer = document.querySelector("footer");
+    if (carrinho.length === 0) {
+        footer.innerHTML = `<i class="fa-solid fa-cart-shopping"></i>
+        <p>Seu carrinho está vazio</p>`
+    }else {
+        footer.innerHTML = `<i class="fa-solid fa-cart-shopping"></i><p>${carrinho.length} itens no carrinho</p>`
+    }
+}
+
 // Chama a função ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
     carregarMenuPromo();
+    atualizarCarrinho();
 
     document.getElementById("btnRefris").addEventListener("click", carregarMenuRefri);
     document.getElementById("btnPromo").addEventListener("click", carregarMenuPromo);
